@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <bean id="userLogin" class="com.soft1851.ioc.entity.UserLogin">
+     <property name="user" ref="user" />
+ </bean>
+    <bean id="user" class="com.soft1851.ioc.entity.User" />
+
+    <bean id="student" class="com.soft1851.ioc.entity.Student">
+        <property name="name" value="颜子皓" />
+        <property name="phone" ref="phone" />
+        <property name="phones">
+            <list>
+                <ref bean="phone" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="phone" class="com.soft1851.ioc.entity.Phone" p:name="诺基亚" p:price="9.99" />
+    <bean id="phone1" class="com.soft1851.ioc.entity.Phone" p:name="三星" p:price="999" />
+    <bean id="test" class="com.soft1851.ioc.entity.Demo">
+        <constructor-arg>
+            <list>
+                <map>
+                    <entry key="老颜" value="颜子皓"/>
+                    <entry key="老吴" value="吴家浩" />
+                </map>
+            </list>
+        </constructor-arg>
+        <constructor-arg>
+            <set>
+                <ref bean="phone" />
+                <ref bean="phone1" />
+            </set>
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+                <value>老颜</value>
+                <value>老吴</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="forum" class="com.soft1851.orm.entity.Forum">
+        <property name="forumId" value="1" />
+        <property name="forumName" value="哈哈" />
+    </bean>
+    <bean id="post" class="com.soft1851.orm.entity.Post">
+        <property name="forumId" value="1" />
+        <property name="content" value="123" />
+        <property name="postId" value="1" />
+        <property name="postTime" value="2019-1-1 8:00:00" />
+        <property name="thumbnail" value="1" />
+        <property name="title" value="hello" />
+    </bean>
+</beans>
